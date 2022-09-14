@@ -14,7 +14,7 @@
 <body>
     <section class="section">
         <h1 class="title">머신러닝 서비스</h1>
-        <h2 class="subtitle">여돌 인공지능 사진 분류 </h2>
+        <h2 class="subtitle">여돌 사진 인공지능 서비스</h2>
     </section>
 
     <div class="mt-3 container file-upload">
@@ -107,9 +107,9 @@
 
         async function predict() {
             var dic_class2information = {};
-            dic_class2information['김민주'] = '매니지먼트 숲 소속 아이즈원이였던 요한's 원픽 ,';
-            dic_class2information['조유리'] = '주식회사 웨이크원 소속 아이즈원이였던 과제하다 알게됨,,.';
-            dic_class2information['최예나'] = '위에화엔터테인먼트 소속 아이즈원이였다가 솔로 데뷔한 오리 ';
+            dic_class2information['김민주'] = """매니지먼트 숲 소속 아이즈원이였던 요한's 원픽""";
+            dic_class2information['조유리'] = '주식회사 웨이크원 소속 아이즈원이였던 과제하다가 처음 알게 된.';
+            dic_class2information['최예나'] = '위에화엔터테인먼트 소속 아이즈원이였다가 솔로 데뷔한 오리';
             var image = document.getElementById("face-image");
             const prediction = await model.predict(image, false);
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
